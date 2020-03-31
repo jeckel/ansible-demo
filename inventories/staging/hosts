@@ -1,0 +1,8 @@
+# File: inventories/staging/hosts
+[web]
+ansible-web1 ansible_connection=ssh ansible_user=root
+ansible-web2 ansible_connection=ssh ansible_user=root
+167.172.52.204 ansible_connection=ssh ansible_user=root
+
+[database]
+ansible-database ansible_connection=ssh ansible_user=root

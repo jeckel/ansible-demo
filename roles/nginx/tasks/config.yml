@@ -1,0 +1,25 @@
+---
+- name: Remove default nginx vhost config
+  file:
+    path: "/etc/nginx/sites-enabled/default"
+    state: absent
+  notify: Restart Nginx
+
+- name: Add Vhost
+  template:
+    src: ansible-demo-vhost.conf.j2
+    dest: /etc/nginx/sites-enabled/ansible-demo.conf
+  notify: Restart Nginx
+
+- name: Ensures {{ document_root }} dir exists
+  file: 
+    path: "{{ document_root }}"
+    state: directory
+
+- name: Add index.html
+  copy:
+    src: index.html
+    dest: "{{ document_root }}/index.html"
+    owner: www-data
+    group: www-data
+    mode: "0444"
