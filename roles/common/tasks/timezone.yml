@@ -1,0 +1,6 @@
+---
+# File: roles/common/tasks/timezone.yml
+
+- name: Set timezone to {{ timedatectl_timezone }}
+  timezone:
+    name: "{{ timedatectl_timezone }}"

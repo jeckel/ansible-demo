@@ -1,0 +1,22 @@
+---
+# File: roles/common/tasks/packages.yml
+
+- name: "Install packages"
+  apt:
+    name:
+      - ca-certificates
+      - curl
+      - dbus
+      - dnsutils
+      - gzip
+      - htop
+      - net-tools
+      - ntp
+      - rsync
+      - sudo
+      - ufw
+      - vim
+      - wget
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600

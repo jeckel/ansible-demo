@@ -1,0 +1,4 @@
+---
+# File: roles/common/defaults/main.yml
+
+- timedatectl_timezone: "Europe/Paris"

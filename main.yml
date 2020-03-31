@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  roles:
+    - role: common
+      timedatectl_timezone: "Europe/Paris"
+
+- hosts: web
+  roles:
+    - role: nginx
+    - role: php
+
+- hosts: database
+  roles:
+    - role: mysql

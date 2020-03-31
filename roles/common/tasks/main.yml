@@ -1,0 +1,5 @@
+---
+# File: roles/common/tasks/main.yml
+
+- include: packages.yml
+- include: timezone.yml
